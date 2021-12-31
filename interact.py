@@ -1,14 +1,14 @@
 import streamlit as st
 import numpy as np
 # from bokeh.plotting import figure,show
-import matplotlib
-import matplotlib.pyplot as plt
+# import matplotlib
+# import matplotlib.pyplot as plt
 import datetime
 import time
 import re
 import requests
-matplotlib.rcParams['font.family'] = 'SimHei'  # 字体设置为黑体
-plt.rcParams['axes.unicode_minus']=False
+# matplotlib.rcParams['font.family'] = 'SimHei'  # 字体设置为黑体
+# plt.rcParams['axes.unicode_minus']=False
 import pandas as pd
 x = np.array([i for i in range(10000)])
 y = np.array(2*(x**4) + x**2 + 9*x + 2) #假设因变量y刚好符合该公式
