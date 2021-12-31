@@ -25,8 +25,8 @@ def get_data(datetime, key_words):
         res = requests.get("https://www.jxsggzy.cn/web/jyxx/002001/002001001/" + str(i) + ".html", headers=sheaders)
         # print(res.text)
         str1 = res.text
-        key_words = "建设项目"
-        date = "20211231"
+        # key_words = "建设项目"
+        # date = "20211231"
         # print(str1)
         # pat = "< a href = "/web/jyxx/002001/002001001/20211203/6110045a-a095-46bb-8760-b4780a68be3f.html" target = "_blank"
         #
@@ -50,7 +50,7 @@ def get_data(datetime, key_words):
                 # st.components.v1.html(html, width=None, height=None, scrolling=False)
                 import streamlit.components.v1 as components
                 components.iframe(html,scrolling=True)
-                components.iframe(html, scrolling=True)
+                # components.iframe(html, scrolling=True)
                 # print(name[0][1:-2])
                 # print(str2)
 def main():
