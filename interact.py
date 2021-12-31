@@ -21,7 +21,7 @@ sheaders={"Accept":"*/*",
 }#注意有时候的省略号表示属性太长
 
 def get_data(datetime, key_words):
-    for i in range(1, 25):
+    for i in range(1, 1000):
         res = requests.get("https://www.jxsggzy.cn/web/jyxx/002001/002001001/" + str(i) + ".html", headers=sheaders)
         # print(res.text)
         str1 = res.text
@@ -35,7 +35,7 @@ def get_data(datetime, key_words):
         # "
         # pat = "<li class=\"ewb-list-node clearfix\">\n<a href=\"/web/jyxx/002001/002001001/20211204/1fd3e19a-e076-4408-88d6-969a1a7a0c98\.html\" target=\"_blank\" class=\"ewb-list-name\">[樟树市]樟树市城市亮化工程—四特大道临街建筑立面亮化工程<font color=\'red\'></font></a>\n<span class=\"ewb-list-date\">2021-12-04</span>\n</li>"
         # pat = "<li class=\"ewb-list-node clearfix\">\n<a href=\"/web/jyxx/002001/002001001/.*html\" target=\"_blank\" class=\"ewb-list-name\">.*<font color=\'...\'></font></a>\n<span class=\"ewb-list-date\">.*</span>\n</li>"
-        pat = "/web/jyxx/002001/002001001/.*html.*class=\"ewb-list-name\">.*" + key_words + ".*<font color.*"
+        pat = "/web/jyxx/002001/002001001/.*html.*class=\"ewb-list-name\">.*" + key_words + ".*color.*"
         rst = re.compile(pat).findall(str1)
         if rst:
             # print(rst[0])
@@ -46,12 +46,12 @@ def get_data(datetime, key_words):
             dat = re.compile(pat1).findall(str2)
             if dat:
                 html = "https://www.jxsggzy.cn/" + dat[0]
-                # print(html)
+                print(html)
                 # st.components.v1.html(html, width=None, height=None, scrolling=False)
                 import streamlit.components.v1 as components
-                components.iframe(html,scrolling=True)
+                # components.iframe(html,scrolling=True)
                 # components.iframe(html, scrolling=True)
-                # print(name[0][1:-2])
+                print(name[0][1:-2])
                 # print(str2)
 def main():
     # Wide mode
