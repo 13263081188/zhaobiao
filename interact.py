@@ -26,7 +26,7 @@ def get_data(datetime, key_words):
         # print(res.text)
         str1 = res.text
         # key_words = "建设项目"
-        # date = "20211231"
+        date = datetime
         # print(str1)
         # pat = "< a href = "/web/jyxx/002001/002001001/20211203/6110045a-a095-46bb-8760-b4780a68be3f.html" target = "_blank"
         #
