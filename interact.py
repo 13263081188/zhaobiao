@@ -46,12 +46,13 @@ def get_data(datetime, key_words):
             dat = re.compile(pat1).findall(str2)
             if dat:
                 html = "https://www.jxsggzy.cn/" + dat[0]
-                print(html)
+                # print(html)
                 # st.components.v1.html(html, width=None, height=None, scrolling=False)
                 import streamlit.components.v1 as components
                 components.iframe(html,scrolling=True)
-                print(name[0][1:-2])
-                print(str2)
+                components.iframe(html, scrolling=True)
+                # print(name[0][1:-2])
+                # print(str2)
 def main():
     # Wide mode
     st.set_page_config(page_title="运灏科技招标")
