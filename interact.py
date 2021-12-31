@@ -41,7 +41,7 @@ def get_data(datetime, key_words):
             # print(rst[0])
             str2 = rst[0]
             pat1 = "/web/jyxx/002001/002001001/" + date + ".*html"
-            pat2 = ">.*建设项目.*<f"
+            pat2 = ">.*"+key_words+".*<f"
             name = re.compile(pat2).findall(str2)
             dat = re.compile(pat1).findall(str2)
             if dat:
