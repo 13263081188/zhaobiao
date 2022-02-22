@@ -62,7 +62,8 @@ def main():
     st.sidebar.title("请您设置相关参数")
     # key_words = "建设项目"
     # date = "20211231"
-    if st.form_submit_button("调试"):
+    x = st.form(key = "tiaoshi")
+    if x.form.form_submit_button("调试"):
         st.write("begin")
         import twint
         c = twint.Config()
