@@ -104,7 +104,7 @@ def main():
             twint.run.Search(c)
             import pandas as pd
             data = pd.read_csv("none.csv")
-            st.write(data.size)
+            st.write(data.shape)
             st.dataframe(data)
         # for i in range(10):
             # st.text("年年西西...")
