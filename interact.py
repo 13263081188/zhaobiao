@@ -58,7 +58,7 @@ def get_data(datetime, key_words):
 def main():
 
     # Wide mode
-    st.set_page_config(page_title="运灏科技招标")
+    st.set_page_config(page_title="Investment automation")
     st.sidebar.title("请您设置相关参数")
     # key_words = "建设项目"
     # date = "20211231"
@@ -82,25 +82,31 @@ def main():
 
         st.write("end")
     z = st.sidebar.form(key="input_")
-    key_words = (z.text_input("输入关键词"))
+    key_words = (z.text_input("key_words"))
+    user_name = (z.text_input("user_name"))
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
-
-    # print(date)
-    date = z.date_input(
-        "请选择日期",
-        datetime.date.today())
-    date = str(date)
-    date = date.split("-")
-    date = ''.join(date)
-    # st.write('Your birthday is:', d)
-    # print(date)
-    if z.form_submit_button("确认"):
+    if key_words and user_name:
         st.balloons()
+        st.write("begin")
+        import twint
+        c = twint.Config()
+        c.Since = "2017-12-27"
+        c.Username = user_name
+        c.Links = "include"
+        c.Limit = 100
+        c.Store_csv = True
+        c.Output = "none.csv"
+        # c.Lang = "english"
+        # c.Translate = True
+        # c.TranslateDest = "italian"
+        twint.run.Search(c)
+        import pandas as pd
+        st.dataframe(pd.read_csv("none.csv"))
         # for i in range(10):
             # st.text("年年西西...")
             # time.sleep(1)
-    if key_words and date:
-        get_data(date,key_words)
+    # if key_words and user_name:
+    #     get_data(date,key_words)
 
         # embed streamlit docs in a streamlit app
         # components.iframe("https://docs.streamlit.io/en/latest")
