@@ -65,7 +65,7 @@ def main():
     st.write("begin")
     import twint
     c = twint.Config()
-    c.Username = "Elon Musk"
+    c.Username = "elonmusk"
     c.Links = "include"
     twint.run.Search(c)
     st.write("end")
