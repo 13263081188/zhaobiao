@@ -37,11 +37,13 @@ def get_data(datetime, key_words):
         # pat = "<li class=\"ewb-list-node clearfix\">\n<a href=\"/web/jyxx/002001/002001001/.*html\" target=\"_blank\" class=\"ewb-list-name\">.*<font color=\'...\'></font></a>\n<span class=\"ewb-list-date\">.*</span>\n</li>"
         pat = "/web/jyxx/002001/002001001/.*html.*class=\"ewb-list-name\">.*" + key_words + ".*color.*"
         rst = re.compile(pat).findall(str1)
+        # print(rst)
         if rst:
             # print(rst[0])
             str2 = rst[0]
             pat1 = "/web/jyxx/002001/002001001/" + date + ".*html"
             pat2 = ">.*"+key_words+".*<f"
+            print(pat1)
             name = re.compile(pat2).findall(str2)
             dat = re.compile(pat1).findall(str2)
             if dat:
@@ -54,11 +56,19 @@ def get_data(datetime, key_words):
                 print(name[0][1:-2])
                 # print(str2)
 def main():
+
     # Wide mode
     st.set_page_config(page_title="运灏科技招标")
     st.sidebar.title("请您设置相关参数")
     # key_words = "建设项目"
     # date = "20211231"
+    st.write("begin")
+    import twint
+    c = twint.Config()
+    c.Username = "Elon Musk"
+    c.Links = "include"
+    twint.run.Search(c)
+    st.write("end")
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("输入关键词"))
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
@@ -71,7 +81,7 @@ def main():
     date = date.split("-")
     date = ''.join(date)
     # st.write('Your birthday is:', d)
-    print(date)
+    # print(date)
     if z.form_submit_button("确认"):
         st.balloons()
         # for i in range(10):
@@ -133,5 +143,6 @@ def main():
         #     st.pyplot(fig1)
         #     st.sidebar.write("单位浓度k/s结果：")
         #     st.sidebar.write(str(polyder["polyder"+str(poly_)](float(c_))))
+
 if __name__ == '__main__':
     main()
