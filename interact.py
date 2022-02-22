@@ -85,23 +85,25 @@ def main():
     key_words = (z.text_input("key_words"))
     user_name = (z.text_input("user_name"))
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
-    if key_words and user_name:
+    if z.form_submit_button("affirm"):
         st.balloons()
-        st.write("begin")
-        import twint
-        c = twint.Config()
-        c.Since = "2017-12-27"
-        c.Username = user_name
-        c.Links = "include"
-        c.Limit = 100
-        c.Store_csv = True
-        c.Output = "none.csv"
-        # c.Lang = "english"
-        # c.Translate = True
-        # c.TranslateDest = "italian"
-        twint.run.Search(c)
-        import pandas as pd
-        st.dataframe(pd.read_csv("none.csv"))
+        if key_words and user_name:
+            st.balloons()
+            st.write("begin")
+            import twint
+            c = twint.Config()
+            c.Since = "2017-12-27"
+            c.Username = user_name
+            c.Links = "include"
+            c.Limit = 100
+            c.Store_csv = True
+            c.Output = "none.csv"
+            # c.Lang = "english"
+            # c.Translate = True
+            # c.TranslateDest = "italian"
+            twint.run.Search(c)
+            import pandas as pd
+            st.dataframe(pd.read_csv("none.csv"))
         # for i in range(10):
             # st.text("年年西西...")
             # time.sleep(1)
