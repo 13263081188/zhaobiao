@@ -95,7 +95,7 @@ def main():
             c.Since = "2000-12-27"
             c.Username = user_name
             c.Links = "include"
-            c.Limit = 100
+            c.Limit = 1000
             c.Store_csv = True
             c.Output = "none.csv"
             # c.Lang = "english"
