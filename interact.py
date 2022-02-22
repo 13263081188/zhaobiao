@@ -62,13 +62,15 @@ def main():
     st.sidebar.title("请您设置相关参数")
     # key_words = "建设项目"
     # date = "20211231"
-    st.write("begin")
-    import twint
-    c = twint.Config()
-    c.Username = "elonmusk"
-    c.Links = "include"
-    twint.run.Search(c)
-    st.write("end")
+    if st.form_submit_button("确认"):
+        st.write("begin")
+        import twint
+        c = twint.Config()
+        c.Username = "elonmusk"
+        c.Links = "include"
+        twint.run.Search(c)
+
+        st.write("end")
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("输入关键词"))
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
