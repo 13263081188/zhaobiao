@@ -63,7 +63,7 @@ def main():
     # key_words = "建设项目"
     # date = "20211231"
     x = st.form(key = "tiaoshi")
-    if x.form.form_submit_button("调试"):
+    if x.form_submit_button("调试"):
         st.write("begin")
         import twint
         c = twint.Config()
