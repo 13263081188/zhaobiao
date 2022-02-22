@@ -1,2 +1,2 @@
 twint
---user --upgrade git+https://github.com/twintproject/twint.git@origin/master#egg=twint
+--upgrade git+https://github.com/twintproject/twint.git@origin/master#egg=twint
