@@ -92,7 +92,7 @@ def main():
             st.write("begin")
             import twint
             c = twint.Config()
-            c.Since = "2010-12-27"
+            c.Since = "2000-12-27"
             c.Username = user_name
             c.Links = "include"
             c.Limit = 100
