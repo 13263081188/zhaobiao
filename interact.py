@@ -94,7 +94,10 @@ def main():
             c = twint.Config()
             # c.Since = "2010-12-27"
             # c.Until = "2021-12-27"
-            c.email = True
+            c.Email = True
+            c.Phone = True
+            c.Verified = True
+
             c.Username = user_name
             c.Links = "include"
             c.Limit = 100000
