@@ -103,7 +103,9 @@ def main():
             # c.TranslateDest = "italian"
             twint.run.Search(c)
             import pandas as pd
-            st.dataframe(pd.read_csv("none.csv"))
+            data = pd.read_csv("none.csv")
+            st.write(data.size)
+            st.dataframe(data)
         # for i in range(10):
             # st.text("年年西西...")
             # time.sleep(1)
