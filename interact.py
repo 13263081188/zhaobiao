@@ -67,9 +67,18 @@ def main():
         st.write("begin")
         import twint
         c = twint.Config()
+        c.Since = "2017-12-27"
         c.Username = "elonmusk"
         c.Links = "include"
+        c.Limit = 100
+        c.Store_csv = True
+        c.Output = "none.csv"
+        # c.Lang = "english"
+        # c.Translate = True
+        # c.TranslateDest = "italian"
         twint.run.Search(c)
+        import pandas as pd
+        st.dataframe(pd.read_csv("none.csv"))
 
         st.write("end")
     z = st.sidebar.form(key="input_")
