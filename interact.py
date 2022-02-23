@@ -84,6 +84,10 @@ def main():
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("key_words"))
     user_name = (z.text_input("user_name"))
+    import os
+    if "none.csv" in os.listdir():
+        os.remove("none.csv")
+    st.balloons()
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
     if z.form_submit_button("affirm"):
         import os
@@ -106,9 +110,7 @@ def main():
             c.Limit = 100000
             c.Store_csv = True
             st.balloons()
-            if "none.csv" in os.listdir():
-                os.remove("none.csv")
-            st.balloons()
+
             c.Output = "none.csv"
             st.write(os.listdir())
             # c.Lang = "english"
