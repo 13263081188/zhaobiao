@@ -86,7 +86,7 @@ def main():
     user_name = (z.text_input("user_name"))
     import os
     if "none.csv" in os.listdir():
-        os.remove("none.csv")
+
     st.balloons()
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
     if z.form_submit_button("affirm"):
@@ -111,16 +111,18 @@ def main():
             c.Store_csv = True
             st.balloons()
 
-            c.Output = "none.csv"
+            c.Output = user_name+".csv"
             st.write(os.listdir())
             # c.Lang = "english"
             # c.Translate = True
             # c.TranslateDest = "italian"
             twint.run.Search(c)
             import pandas as pd
-            data = pd.read_csv("none.csv")
+            data = pd.read_csv(user_name+".csv")
             st.write(data.shape)
             st.dataframe(data)
+    # if key_words and user_name:
+    #     os.remove(user_name+".csv")
         # for i in range(10):
             # st.text("年年西西...")
             # time.sleep(1)
