@@ -60,34 +60,9 @@ def main():
     # Wide mode
     st.set_page_config(page_title="Investment automation")
     st.sidebar.title("请您设置相关参数")
-    # key_words = "建设项目"
-    # date = "20211231"
-    x = st.form(key = "tiaoshi")
-    if x.form_submit_button("调试"):
-        st.write("begin")
-        import twint
-        c = twint.Config()
-        c.Since = "2017-12-27"
-        c.Username = "elonmusk"
-        c.Links = "include"
-        c.Limit = 100
-        c.Store_csv = True
-        c.Output = "none.csv"
-        # c.Lang = "english"
-        # c.Translate = True
-        # c.TranslateDest = "italian"
-        twint.run.Search(c)
-        import pandas as pd
-        st.dataframe(pd.read_csv("none.csv"))
-        import os
-        os.remove("none.csv")
-        st.write("end")
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("key_words"))
     user_name = (z.text_input("user_name"))
-
-    # import os
-    # if "none.csv" in os.listdir():
 
     st.balloons()
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
@@ -105,17 +80,14 @@ def main():
             c.Since = "2010-12-27"
             # c.Until = "2021-12-27"
             # c.Skip_certs = True
-
             # c.Email = True
             # c.Phone = True
             # c.Verified = True
-
             c.Username = user_name
             c.Links = "include"
             c.Limit = 100000
             c.Store_csv = True
             st.balloons()
-
             c.Output = user_name+".csv"
             st.write(os.listdir())
             # c.Lang = "english"
@@ -126,6 +98,7 @@ def main():
             data = pd.read_csv(user_name+".csv")
             st.write(data.shape)
             st.dataframe(data)
+            os.remove(user_name+".csv")
     # if key_words and user_name:
     #     os.remove(user_name+".csv")
         # for i in range(10):
