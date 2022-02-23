@@ -84,8 +84,8 @@ def main():
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("key_words"))
     user_name = (z.text_input("user_name"))
-    import os
-    if "none.csv" in os.listdir():
+    # import os
+    # if "none.csv" in os.listdir():
 
     st.balloons()
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
