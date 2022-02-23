@@ -107,6 +107,7 @@ def main():
             c.Limit = 100000
             c.Store_csv = True
             c.Output = "none.csv"
+            st.write(os.listdir())
             # c.Lang = "english"
             # c.Translate = True
             # c.TranslateDest = "italian"
