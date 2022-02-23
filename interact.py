@@ -87,6 +87,7 @@ def main():
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
     if z.form_submit_button("affirm"):
         import os
+        st.balloons()
         if "none.csv" in os.listdir():
             os.remove("none.csv")
         st.balloons()
