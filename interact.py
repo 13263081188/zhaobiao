@@ -85,6 +85,7 @@ def main():
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("key_words"))
     user_name = (z.text_input("user_name"))
+
     # import os
     # if "none.csv" in os.listdir():
 
@@ -109,20 +110,20 @@ def main():
             # c.Phone = True
             # c.Verified = True
 
-            c.Username = "Amir1882h"
+            c.Username = user_name
             c.Links = "include"
             c.Limit = 100000
             c.Store_csv = True
             st.balloons()
 
-            c.Output = "non.csv"
+            c.Output = user_name+".csv"
             st.write(os.listdir())
             # c.Lang = "english"
             # c.Translate = True
             # c.TranslateDest = "italian"
             twint.run.Search(c)
             import pandas as pd
-            data = pd.read_csv("non.csv")
+            data = pd.read_csv(user_name+".csv")
             st.write(data.shape)
             st.dataframe(data)
     # if key_words and user_name:
