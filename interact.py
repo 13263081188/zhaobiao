@@ -79,7 +79,8 @@ def main():
         twint.run.Search(c)
         import pandas as pd
         st.dataframe(pd.read_csv("none.csv"))
-
+        import os
+        os.remove("none.csv")
         st.write("end")
     z = st.sidebar.form(key="input_")
     key_words = (z.text_input("key_words"))
@@ -111,7 +112,7 @@ def main():
             c.Store_csv = True
             st.balloons()
 
-            c.Output = user_name+".csv"
+            c.Output = str(user_name+".csv"
             st.write(os.listdir())
             # c.Lang = "english"
             # c.Translate = True
