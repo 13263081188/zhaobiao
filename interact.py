@@ -71,18 +71,17 @@ def main():
 
         if key_words and user_name:
             st.balloons()
-
-
-
             st.write("begin")
             import twint
             c = twint.Config()
             c.Since = "2010-12-27"
             c.Until = "2022-02-21"
-            # c.Skip_certs = True
-            # c.Email = True
-            # c.Phone = True
-            # c.Verified = True
+
+            c.Skip_certs = True
+            c.Email = True
+            c.Phone = True
+            c.Verified = True
+
             c.Username = user_name
             c.Links = "include"
             c.Limit = 1000000
