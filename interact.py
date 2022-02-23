@@ -78,13 +78,13 @@ def main():
             c.Until = "2022-02-21"
 
             # c.Skip_certs = True
-            # c.Email = True
-            # c.Phone = True
+            c.Email = True
+            c.Phone = True
             # c.Verified = True
 
             c.Username = user_name
             c.Links = "include"
-            c.Limit = 1000000
+            c.Limit = 1000000000
             c.Store_csv = True
             st.balloons()
             c.Output = user_name+".csv"
@@ -152,10 +152,12 @@ def main():
         #     plt.xlabel('concentration',fontproperties='SimHei')
         #     plt.ylabel('k/s per concentration')
         #     plt.title('derivative_ concentration')
+
         #     for i in range(1,6):
         #         ax1.plot(x, polyder["polyder"+str(i)](x), label="Polynomial of order"+str(i)+"k/s", linewidth=1, color=color_[i])
         #         # st.write(i)
         #     plt.legend()
+
         #     st.pyplot(fig1)
         #     st.sidebar.write("单位浓度k/s结果：")
         #     st.sidebar.write(str(polyder["polyder"+str(poly_)](float(c_))))
