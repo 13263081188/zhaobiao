@@ -86,6 +86,8 @@ def main():
     user_name = (z.text_input("user_name"))
     # date = (z.text_input("输入日期\n(2021年12月31日 输入 20211231)"))
     if z.form_submit_button("affirm"):
+        import os
+        st.write(os.listdir())
         st.balloons()
         if key_words and user_name:
             st.balloons()
