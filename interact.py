@@ -10,14 +10,21 @@ import requests
 # matplotlib.rcParams['font.family'] = 'SimHei'  # 字体设置为黑体
 # plt.rcParams['axes.unicode_minus']=False
 import pandas as pd
+
 x = np.array([i for i in range(10000)])
 y = np.array(2*(x**4) + x**2 + 9*x + 2) #假设因变量y刚好符合该公式
 #y = np.array([300,500,0,-10,0,20,200,300,1000,800,4000,5000,10000,9000,22000])
+
 color_ = ['black','red','green','orange','yellow','blue']
+
 sheaders={"Accept":"*/*",
+
 "Accept-Encoding":"gzip, deflate, br",
+
 "Cookie":"SINAGLOBAL=3135343932446.769.1569131735884; ULV=1569235400641:2:2:2:5816638612821.978.1569235400631:1569131735890; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5IBGXBvELiOe6cpQGizFv_5JpX5KzhUgL.Fo-ceo-XehzfeK.2dJLoIpHjIg2LxKqLBo-LB-2LxKnLB.qLBo.t; SUHB=0M2FtyTxiHeXaa; ALF=1600771552; wvr=6; SUB=_2A25wjNI0DeRhGeNI6VcV8CzJyjWIHXVT-ET8rDV8PUNbmtBeLRbkkW9NSJoA4XYiAxZAKyXLcYUpecXIHP09RvJR; login_sid_t=a04ceb7ade5efdc7dc78f30b154620e1; cross_origin_proto=SSL; _s_tentry=passport.weibo.com; UOR=,,www.baidu.com; Apache=5816638612821.978.1569235400631; SSOLoginState=1569235556; webim_unReadCount=%7B%22time%22%3A1569242365166%2C%22dm_pub_total%22%3A1%2C%22chat_group_client%22%3A0%2C%22allcountNum%22%3A7%2C%22msgbox%22%3A0%7D",
+
 "User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:69.0) Gecko/20100101 Firefox/69.0"
+
 }#注意有时候的省略号表示属性太长
 
 def get_data(datetime, key_words):
@@ -77,9 +84,10 @@ def main():
             c.Since = "2010-12-27"
             c.Until = "2022-02-21"
 
+
             # c.Skip_certs = True
-            c.Email = True
-            c.Phone = True
+            # c.Email = True
+            # c.Phone = True
             # c.Verified = True
 
             c.Username = user_name
