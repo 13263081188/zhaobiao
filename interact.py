@@ -78,14 +78,14 @@ def main():
             import twint
             c = twint.Config()
             c.Since = "2010-12-27"
-            # c.Until = "2021-12-27"
+            c.Until = "2022-02-21"
             # c.Skip_certs = True
             # c.Email = True
             # c.Phone = True
             # c.Verified = True
             c.Username = user_name
             c.Links = "include"
-            c.Limit = 100000
+            c.Limit = 1000000
             c.Store_csv = True
             st.balloons()
             c.Output = user_name+".csv"
