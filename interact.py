@@ -80,7 +80,7 @@ def main():
             c.Skip_certs = True
             c.Email = True
             c.Phone = True
-            c.Verified = True
+            # c.Verified = True
 
             c.Username = user_name
             c.Links = "include"
