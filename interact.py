@@ -97,9 +97,9 @@ def main():
             st.write("begin")
             import twint
             c = twint.Config()
-            c.Since = "2010-12-27"
-            c.Until = "2021-12-27"
-            c.Skip_certs = True
+            # c.Since = "2010-12-27"
+            # c.Until = "2021-12-27"
+            # c.Skip_certs = True
 
             c.Email = True
             c.Phone = True
