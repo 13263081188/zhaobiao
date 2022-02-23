@@ -77,9 +77,9 @@ def main():
             c.Since = "2010-12-27"
             c.Until = "2022-02-21"
 
-            c.Skip_certs = True
-            c.Email = True
-            c.Phone = True
+            # c.Skip_certs = True
+            # c.Email = True
+            # c.Phone = True
             # c.Verified = True
 
             c.Username = user_name
