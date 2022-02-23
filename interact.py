@@ -112,14 +112,14 @@ def main():
             c.Store_csv = True
             st.balloons()
 
-            c.Output = "none"+str(user_name)+".csv"
+            c.Output = "non.csv"
             st.write(os.listdir())
             # c.Lang = "english"
             # c.Translate = True
             # c.TranslateDest = "italian"
             twint.run.Search(c)
             import pandas as pd
-            data = pd.read_csv("none"+str(user_name)+".csv")
+            data = pd.read_csv("non.csv")
             st.write(data.shape)
             st.dataframe(data)
     # if key_words and user_name:
