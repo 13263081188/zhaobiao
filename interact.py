@@ -77,6 +77,9 @@ def main():
         import os
 
         if key_words and user_name:
+            from twitter_scraper import get_tweets
+            for tweet in get_tweets('twitter', pages=1):
+                st.write(tweet['text'])
             st.balloons()
             st.write("begin")
             import twint
